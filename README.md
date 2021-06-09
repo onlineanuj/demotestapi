@@ -25,18 +25,24 @@ _id: "replicaSet1", members: [{ _id: 0, host: "localhost:27017" },{ _id: 1, host
 )
 ```
 
-usefull commands
 Run mongoDB nodes
+```javascript
 ./mongodb1/bin/mongod.exe --config C:/anuj/projects/mongoDB_graphana/mongodb1.conf
 ./mongodb2/bin/mongod.exe --config C:/anuj/projects/mongoDB_graphana/mongodb2.conf
 ./mongodb3/bin/mongod.exe --config C:/anuj/projects/mongoDB_graphana/mongodb3.conf
+```
 Run mongoDB client
+```javascript
 ./mongo.exe --host localhost --port 27017
+```
 Run MongoDB exporter
+```javascript
 ./mongodb_exporter --mongodb.uri=mongodb://anuj:anuj@127.0.0.1:27017/demodb?ssl=false --web.listen-address=":9216"
 ```
 Usefull web URLS
-Web Url to see mongoDB metrics : http://localhost:9216/metrics
-Web Url to see Prometheus : http://localhost:9090/
-Web Url to see Prometheus targets : http://localhost:9090/targets
-Web Url to see Grafana dashboard : http://localhost:3000/
+S.No. | Resource          | Download URL
+----- | ----------------- | ----------------
+1     | Web Url to see mongoDB metrics | http://localhost:9216/metrics 
+2     | Web Url to see Prometheus | http://localhost:9090/
+3     | Web Url to see Prometheus targets | http://localhost:9090/targets 
+4     | Web Url to see Grafana dashboard | http://localhost:3000/
