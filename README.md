@@ -7,4 +7,36 @@ S.No. | Resource          | Download URL
 3     | Grafana           | https://dl.grafana.com/oss/release/grafana-8.0.0.windows-amd64.zip 
 4     | Prometheus        | https://github.com/prometheus/prometheus/releases/download/v2.27.1/prometheus-2.27.1.windows-amd64.zip 
 
-postman is used as a rest api client to call rest api. Spring STS is used to devlop and deploy the rest api as spring boot application. 
+**Postman** is used as a rest api client to call rest api. 
+
+**Spring STS** is used to devlop and deploy the rest api as spring boot application. 
+
+**Robo 3t** is used a mongo db client.
+
+![Deployment Diagram](https://github.com/onlineanuj/demotestapi/blob/master/Untitled%20Diagram.png)
+
+### Create MongoDB Replica set
+Open the mongo client on any mongodb instance and create the replica set  
+```javascript
+  rs.initiate(
+{
+_id: "replicaSet1", members: [{ _id: 0, host: "localhost:27017" },{ _id: 1, host: "localhost:27018" },{ _id: 2, host: "localhost:27019" }]
+}
+)
+```
+
+usefull commands
+Run mongoDB nodes
+./mongodb1/bin/mongod.exe --config C:/anuj/projects/mongoDB_graphana/mongodb1.conf
+./mongodb2/bin/mongod.exe --config C:/anuj/projects/mongoDB_graphana/mongodb2.conf
+./mongodb3/bin/mongod.exe --config C:/anuj/projects/mongoDB_graphana/mongodb3.conf
+Run mongoDB client
+./mongo.exe --host localhost --port 27017
+Run MongoDB exporter
+./mongodb_exporter --mongodb.uri=mongodb://anuj:anuj@127.0.0.1:27017/demodb?ssl=false --web.listen-address=":9216"
+```
+Usefull web URLS
+Web Url to see mongoDB metrics : http://localhost:9216/metrics
+Web Url to see Prometheus : http://localhost:9090/
+Web Url to see Prometheus targets : http://localhost:9090/targets
+Web Url to see Grafana dashboard : http://localhost:3000/
