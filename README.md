@@ -37,7 +37,7 @@ Run mongoDB client
 ```
 Run MongoDB exporter
 ```javascript
-./mongodb_exporter --mongodb.uri=mongodb://anuj:anuj@127.0.0.1:27017/demodb?ssl=false --web.listen-address=":9216"
+./mongodb_exporter --mongodb.uri=mongodb://anuj:anuj@127.0.0.1:27017/demodb?ssl=false --web.listen-address=":9216" --compatible-mode --mongodb.collstats-colls=demodb.message
 ```
 Usefull web URLS
 S.No. | Resource          | Download URL
