@@ -48,3 +48,5 @@ S.No. | Resource          | Download URL
 2     | Web Url to see Prometheus | http://localhost:9090/
 3     | Web Url to see Prometheus targets | http://localhost:9090/targets 
 4     | Web Url to see Grafana dashboard | http://localhost:3000/
+5     | Web Url to see Prometheus exporters | https://prometheus.io/docs/instrumenting/exporters/
+4     | Web Url to see Grafana dashboard | https://grafana.com/grafana/dashboards
